@@ -55,7 +55,7 @@
                             </div>
                     </div>
                 
-                        <br>
+                        <br><br>
                 
                    <a href="../post/{!! $blog->id !!}">
             <img class="img-responsive " src="../post_images/{!! $blog->cover !!}" width="900" height="300" alt=""><br>
