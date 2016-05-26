@@ -53,8 +53,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                <img class="nav-img" src="../images/amarblog3.png" alt="" height="35px" width="70px;">  আমার ব্লগ
+                <a class="navbar-brand" href="{{ url('/') }}"> 
+                আমার <img class="nav-img" src="../images/amarblog3.png" alt="" height="35px" width="70px;"> ব্লগ
                 </a>
             </div>
 

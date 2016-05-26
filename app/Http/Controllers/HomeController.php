@@ -39,13 +39,10 @@ class HomeController extends Controller
 
     public function create()
     {
-        if($this->middleware('auth'))
-        {
+        $this->middleware('auth');
+        
             $categories = Category::all();
             return view('blog.create',compact('categories'));
-        }
-        else
-            return view('errors.503');
 
     }
 //----------------------------insert post---------------------------------

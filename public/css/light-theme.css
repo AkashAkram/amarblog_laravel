@@ -14,7 +14,7 @@
 .navbar-akash .navbar-brand {
     font-family: verdana;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #000000;
     background-color: transparent;
 
 }
@@ -29,7 +29,7 @@
     color: orangered;
 }
 .navbar-akash .navbar-nav > li > a {
-    color: #FFFFFF;
+    color: #000000;
     font-family: verdana;
     
 }
@@ -210,4 +210,19 @@ a:hover{
 .right_align{
     text-align: right;
 }
+
+
+
+.post_image{
+    border: 1px solid #000000;
+}
+
+
+
+
+
+
+
+
+
 /* -------------------------------- Body part end ---------------------------------------  */

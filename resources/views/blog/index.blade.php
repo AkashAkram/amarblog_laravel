@@ -48,8 +48,7 @@
 
                                         <a href="../edit/post/{!! $blog->id !!}">update</a> |
                                         <a href="../remove/post/{!! $blog->id !!}">Delete</a>
-                                    @else
-                                        <br>
+                                   
                                     @endif
                                 @endif
                             </div>
@@ -57,15 +56,22 @@
                 
                         <br><br>
                 
-                   <a href="../post/{!! $blog->id !!}">
-            <img class="img-responsive " src="../post_images/{!! $blog->cover !!}" width="900" height="300" alt=""><br>
-
-            </a>
+                    <a href="../post/{!! $blog->id !!}">
+                        <img class="img-responsive post_image" src="../post_images/{!! $blog->cover !!}" width="900" height="300" alt="">
+                        <br>
+                    </a>
 
                     <br>
-                        <p class="well-p">{!! substr($blog->body,0,550) !!}<br><br>
-                            <a class="btn btn-primary" href="../post/{!! $blog->id !!}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-                    </div>
+                        <p class="well-p">
+                            {!! substr($blog->body,0,550) !!}<br><br>
+                            <a class="btn btn-primary" href="../post/{!! $blog->id !!}">Read More <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </p>
+
+
+
+                <hr>
+            </div>
 
                 @endforeach
           @endif

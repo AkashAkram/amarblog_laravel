@@ -72,7 +72,7 @@
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">Current Image</label>
                                     <div class="col-md-6">
-                                        <img class="img-responsive " src="/post_images/{!! $blog->cover !!}" width="900" height="300" alt="">
+                                        <img class="img-responsive post_image" src="/post_images/{!! $blog->cover !!}" width="900" height="300" alt="">
                                     </div>
                                 </div>
 
