@@ -52,11 +52,15 @@
                             </div>
                     </div>
 
-           <br><br>
-            <a href="../post/{!! $blog->id !!}">
-                <img class="img-responsive post_image" src="../post_images/{!! $blog->cover !!}" width="900" height="300" alt="">
-                <br>
-            </a>
+                                                     <br><br>
+            
+                       <div class="image">
+                            <a href="../post/{!! $blog->id !!}">
+                                <img class="img-responsive post_image" border="1" src="../post_images/{!! $blog->cover !!}" width="" alt="">
+                                <br>
+                            </a>
+                       </div>
+
 
 
                 <p class="well-p">{!! $blog->body !!}<br></p>
