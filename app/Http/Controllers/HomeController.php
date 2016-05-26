@@ -111,15 +111,13 @@ class HomeController extends Controller
 
     public function myblog()
     {
-        if($this->middleware('auth'))
-        {
+            $this->middleware('auth');
+        
             $id = Auth::user()->id;
             $categories= Category::all();
             $blogs = Article::where('author_id', $id)->orderBy('created_at', 'desc')->paginate(5);
             return view('blog.index',compact('blogs','categories'));
-        }
-        else
-            return view('errors.503');
+       
     }
 
 
@@ -145,7 +143,14 @@ class HomeController extends Controller
     public function updatepost($id)
     {
             $this->middleware('auth');
-        
+            
+            if(isset($_POST['remove']))
+            {
+                $update_photo = Article::find($id);
+                $update_photo->cover = 'no_image.png';
+                $update_photo->save();
+            }
+
             if(isset($_POST['updateButton']))
             {
 
@@ -188,15 +193,49 @@ class HomeController extends Controller
     public function removepost($id)
     {
         $this->middleware('auth');
-        {
-
+    
             Article::destroy($id);
             return redirect('/');
-        }
+    }
+
+//-----------------filter-------------------------//
+  
+    public function bycategory($id)
+    {
+        $this->middleware('auth');
+    
+            $categories = Category::all();
+            $cat_name = Category::select('name')->where('id',$id);
+            $blogs = Article::where('category_id', $id)->orderBy('created_at', 'desc')->paginate(5);
+            return view('blog.index',compact('blogs','categories','cat_name'));
     }
 
 
-  
+
+
+
+    public function byauthor($id)
+    {
+        $this->middleware('auth');
+    
+            $categories = Category::all();
+            $auth_name = User::select('name')->where('id',$id);
+            $blogs = Article::where('author_id', $id)->orderBy('created_at', 'desc')->paginate(5);
+            return view('blog.index',compact('blogs','categories','auth_name'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

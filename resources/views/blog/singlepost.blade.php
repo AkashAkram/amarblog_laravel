@@ -13,8 +13,8 @@
     
 
         <?php
-                $author = \App\User::select('name')->where('id',$blog->author_id)->first();
-                $cat = \App\Category::select('name')->where('id',$blog->category_id)->first();
+                $author = \App\User::select()->where('id',$blog->author_id)->first();
+                $cat = \App\Category::select()->where('id',$blog->category_id)->first();
         ?>
 
 
@@ -36,7 +36,7 @@
 
              <div class="post_info">
                            <div class="left_align">
-                          by <a href="/">{!! $author->name!!}</a> | Category <a href="/">{{ $cat->name }}</a> |
+                          by <a href="/byauthor/{{ $author->id }}">{!! $author->name!!}</a> | Category <a href="/bycategory/{{ $cat->id }}">{{ $cat->name }}</a> |
                                 Posted At: <span class="glyphicon glyphicon-time"></span> {!! $blog->created_at !!}
                             </div>
                             <div class="right_align">
@@ -56,7 +56,7 @@
             
                        <div class="image">
                             <a href="../post/{!! $blog->id !!}">
-                                <img class="img-responsive post_image" border="1" src="../post_images/{!! $blog->cover !!}" width="" alt="">
+                                <img class="img-responsive post_image" border="1" src="../post_images/{!! $blog->cover !!}" alt="">
                                 <br>
                             </a>
                        </div>

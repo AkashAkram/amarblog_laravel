@@ -29,8 +29,13 @@ Route::get('/myblog', 'HomeController@myblog');
 
 Route::get('/remove/post/{postid}', 'HomeController@removepost');
 
-Route::get('/edit/post/{sdjij}', 'HomeController@editpost');
+Route::get('/edit/post/{editid}', 'HomeController@editpost');
 Route::post('/update/post/{postid}', 'HomeController@updatepost');
+
+Route::get('/bycategory/{cat}', 'HomeController@bycategory');
+Route::get('/byauthor/{cat}', 'HomeController@byauthor');
+Route::get('/search/{string}', 'HomeController@byauthor');
+
 
 /*
 Route::controllers([

@@ -19,7 +19,7 @@
                 <?php
 
                
-                $pre_cat = \App\Category::select('name')->where('id',$blog->category_id)->first();
+                $pre_cat = \App\Category::select()->where('id',$blog->category_id)->first();
                 ?>
 
 
@@ -60,7 +60,7 @@
                                     <label class="col-md-4 control-label">Catagory</label>
                                     <div class="col-md-6">
                                         <select name="category_id"  class="form-control">
-                                            <option value="{{ $blog->category_id }}" selected>{{ $pre_cat->name }}</option>
+                                            <option value="{{ $pre_cat->id }}" selected>{{ $pre_cat->name }}</option>
                                             @foreach($categories as $cat)
                                                 @if($cat->id != $blog->category_id)
                                                     <option value="{!! $cat->id !!}">{!! $cat->name !!}</option>
@@ -72,12 +72,20 @@
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">Current Image</label>
                                     <div class="col-md-6">
-                                        <img class="img-responsive post_image" src="/post_images/{!! $blog->cover !!}" width="900" height="300" alt="">
+                                        <img class="img-responsive post_imageS" src="/post_images/{!! $blog->cover !!}" width="900" height="300" alt="">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label">Cover</label>
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-primary" id="remove" name="remove">
+                                            remove this photo
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Update Cover Photo</label>
                                     <div class="col-md-6">
                                         <input type="file" class="" name="image">
                                     </div>
