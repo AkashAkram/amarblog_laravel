@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div >
 
                 <!-- Blog Search well-custom -->
                 <div class="well-custom">
@@ -17,16 +17,13 @@
                 <!-- Blog Categories well-custom-custom -->
                 <div class="well-custom">
                     <h4>Blog Categories</h4>
-
-
-                            <ul class="list-unstyled well-custom-list">
-                                @foreach($categories as $category)
-                                    <li><a href="/bycategory/{{ $category->id }}">{!! $category->name !!}</a></li>
-
-                                @endforeach
-                            </ul>
-
-                        <!-- /.col-lg-6 -->
+                        <div class="row">
+                        @foreach($categories as $category)
+                            <div class="col-md-6">
+                              <a href="/bycategory/{{ $category->id }}">{!! $category->name !!}</a>
+                            </div>
+                        @endforeach
+                        </div>
 
 
                 </div>

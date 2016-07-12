@@ -38,7 +38,7 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-akash navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -91,9 +91,13 @@
     <div class="container">
         <div class="row" style="text-align: justify">
 
-            @yield('content')
+            <div class="col-md-8">
+                @yield('content')
+            </div>
                 <!-- Sidebar Widgets-->
-            @include ('layouts.sidebar')
+            <div class="col-md-4">
+                @include ('layouts.sidebar')
+            </div>
       
         </div>
     </div>

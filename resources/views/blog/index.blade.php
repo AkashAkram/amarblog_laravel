@@ -7,7 +7,6 @@
 @section('content')
     
 
-    <div class="col-md-8">
             <!-- First Blog Post -->
          @if(count($blogs)==0)
             <div class="well-header">
@@ -76,16 +75,11 @@
                             </a>
                         </p>
 
-
-
-                <hr>
             </div>
 
                 @endforeach
          
         <div align="center">{!! $blogs->render() !!}</div>
-    </div>          <!-- Pageinate -->
-
 
 
 @endsection

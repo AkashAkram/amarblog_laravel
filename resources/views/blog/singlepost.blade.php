@@ -8,7 +8,7 @@
 @section('content')
 
                                     <!--Single blog-->
-    <div class="col-md-8">
+    <div >
 
     
 

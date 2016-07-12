@@ -5,7 +5,7 @@ Register
 
 @section('content')
 
-    <div class="col-md-8">
+    <div>
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">

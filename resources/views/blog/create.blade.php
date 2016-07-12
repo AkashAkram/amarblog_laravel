@@ -12,7 +12,7 @@
 @endsection
 @section('content')
 
-            <div class="col-md-8">
+            <div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="well-header">
