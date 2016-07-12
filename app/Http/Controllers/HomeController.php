@@ -20,17 +20,16 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    function __construct()
     {
-       // $this->middleware('auth');
     }
 
     public function index()
     {
         $blogs =  Article::orderBy('id', 'desc')->paginate(5);
         $categories = Category::all();
-
-        return view('blog.index',compact('blogs','categories'));
+        $msg = "";
+        return view('blog.index',compact('blogs','categories','msg'));
     }
 
 
@@ -112,11 +111,11 @@ class HomeController extends Controller
     public function myblog()
     {
             $this->middleware('auth');
-        
+            $msg = "All Articles By ".Auth::user()->name;
             $id = Auth::user()->id;
             $categories= Category::all();
             $blogs = Article::where('author_id', $id)->orderBy('created_at', 'desc')->paginate(5);
-            return view('blog.index',compact('blogs','categories'));
+            return view('blog.index',compact('blogs','categories','msg'));
        
     }
 
@@ -205,9 +204,11 @@ class HomeController extends Controller
         $this->middleware('auth');
     
             $categories = Category::all();
-            $cat_name = Category::select('name')->where('id',$id);
+            $cat_name = Category::select('name')->where('id',$id)->get();
+        
+            $msg = 'Showing All Articles in Category "'.$cat_name[0]->name.'"';
             $blogs = Article::where('category_id', $id)->orderBy('created_at', 'desc')->paginate(5);
-            return view('blog.index',compact('blogs','categories','cat_name'));
+            return view('blog.index',compact('blogs','categories','msg'));
     }
 
 
@@ -219,13 +220,23 @@ class HomeController extends Controller
         $this->middleware('auth');
     
             $categories = Category::all();
-            $auth_name = User::select('name')->where('id',$id);
+            $auth_name = User::select('name')->where('id',$id)->get();
+            $msg = "Showing All Articles by Author \"".$auth_name[0]->name."\"";
             $blogs = Article::where('author_id', $id)->orderBy('created_at', 'desc')->paginate(5);
-            return view('blog.index',compact('blogs','categories','auth_name'));
+            return view('blog.index',compact('blogs','categories','msg'));
     }
 
 
+    public function search()
+    {
+        $categories = Category::all();
 
+        $query = Request::get('query');
+        //echo $searchItems;
+        $blogs = Article::where('body', 'like', '%'.$query.'%')->orderBy('created_at', 'desc')->paginate(5); 
+        $msg = "Showing Everything for query \"".$query."\"";
+        return view('blog.index',compact('blogs','categories','msg'));
+    }
 
 
 

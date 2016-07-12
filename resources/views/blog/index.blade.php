@@ -11,14 +11,20 @@
          @if(count($blogs)==0)
             <div class="well-header">
                  <div class="left_align">
-                     <h2>
+                     <h3>
                         Nothing Found !!!
-                    </h2>
+                    </h3>
                 </div>
                 <div class="right_align">
                     <a class="btn-close hover-animate" href="../"></a>
                     
                 </div>
+            </div>
+        @elseif($msg)
+            <div class="well">
+                 <h4>
+                    {{ $msg }}   
+                </h4>
             </div>
         @endif
        

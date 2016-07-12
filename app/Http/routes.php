@@ -34,7 +34,7 @@ Route::post('/update/post/{postid}', 'HomeController@updatepost');
 
 Route::get('/bycategory/{cat}', 'HomeController@bycategory');
 Route::get('/byauthor/{cat}', 'HomeController@byauthor');
-Route::get('/search/{string}', 'HomeController@byauthor');
+Route::get('/search', 'HomeController@search');
 
 
 /*

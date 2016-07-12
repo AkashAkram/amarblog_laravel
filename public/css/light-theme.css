@@ -1,130 +1,4 @@
 
-/* ------------------------------------  Navbar part start ------------------------------------- */
-
-/* - Navbar-default  rgba(0, 88, 255, 0.4)   */
-
-
-.navbar-akash {
-
-    background-color: rgba(0,0,0,0.3);
-    border: none;
-   
-    box-shadow: 0px 0px 0px #000000;
-}
-.navbar-akash .navbar-brand {
-    font-family: verdana;
-    font-weight: bold;
-    color: #000000;
-    background-color: transparent;
-
-}
-.navbar-akash .navbar-brand:hover,
-.navbar-akash .navbar-brand:focus {
-    
-    background-color: transparent;
-    background-color: transparent;
-    border-bottom: solid 5px #FFFFFF;
-}
-.navbar-akash .navbar-text {
-    color: orangered;
-}
-.navbar-akash .navbar-nav > li > a {
-    color: #000000;
-    font-family: verdana;
-    
-}
-.navbar-akash .navbar-nav > li > a:hover,
-.navbar-akash .navbar-nav > li > a:focus {
-    color: #FFFFFF;
-    background-color: transparent;
-    height: 50px;
-    border-bottom: solid 5px #FFFFFF;
-
-}
-.navbar-akash .navbar-nav > .active > a,
-.navbar-akash .navbar-nav > .active > a:hover,
-.navbar-akash .navbar-nav > .active > a:focus {
-    color: #fff;
-    background-color: orangered;
-}
-.navbar-akash .navbar-nav > .disabled > a,
-.navbar-akash .navbar-nav > .disabled > a:hover,
-.navbar-akash .navbar-nav > .disabled > a:focus {
-    color: #444;
-    background-color: transparent;
-}
-.navbar-akash .navbar-toggle {
-    border-color: #333;
-}
-.navbar-akash .navbar-toggle:hover,
-.navbar-akash .navbar-toggle:focus {
-    background-color: black;
-}
-.navbar-akash .navbar-toggle .icon-bar {
-
-}
-.navbar-akash .navbar-collapse,
-.navbar-akash .navbar-form {
-    border-color: #101010;
-}
-.navbar-akash .navbar-nav > .open > a,
-.navbar-akash .navbar-nav > .open > a:hover,
-.navbar-akash .navbar-nav > .open > a:focus {
-    color: #fff;
-    background-color: #000000;
-}
-@media (max-width: 767px) {
-    .navbar-akash .navbar-nav .open .dropdown-menu > .dropdown-header {
-        border-color: #080808;
-    }
-    .navbar-akash .navbar-nav .open .dropdown-menu .divider {
-        background-color: #000000;
-    }
-    .navbar-akash .navbar-nav .open .dropdown-menu > li > a {
-        color: #9d9d9d;
-        background-color: #000000;
-    }
-    .navbar-akash .navbar-nav .open .dropdown-menu > li > a:hover,
-    .navbar-akash .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #fff;
-        background-color: transparent;
-    }
-    .navbar-akash .navbar-nav .open .dropdown-menu > .active > a,
-    .navbar-akash .navbar-nav .open .dropdown-menu > .active > a:hover,
-    .navbar-akash .navbar-nav .open .dropdown-menu > .active > a:focus {
-        color: #fff;
-        background-color: #080808;
-    }
-    .navbar-akash .navbar-nav .open .dropdown-menu > .disabled > a,
-    .navbar-akash .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-    .navbar-akash .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-        color: #444;
-        background-color: transparent;
-    }
-}
-.navbar-akash .navbar-link {
-    color: #9d9d9d;
-}
-.navbar-akash .navbar-link:hover {
-    color: #fff;
-}
-.navbar-akash .btn-link {
-    color: #9d9d9d;
-}
-.navbar-akash .btn-link:hover,
-.navbar-akash .btn-link:focus {
-    color: #fff;
-}
-.navbar-akash .btn-link[disabled]:hover,
-fieldset[disabled] .navbar-akash .btn-link:hover,
-.navbar-akash .btn-link[disabled]:focus,
-fieldset[disabled] .navbar-akash .btn-link:focus {
-    color: #444;
-}
-
-
-/* ---------------------  Navbar part end --------------------------------- */
-
 
 /* ---------------------- Body part start  --------------------------------- */
 
@@ -188,7 +62,6 @@ a:hover{
     font-size: medium;
     color: #000000;
     display: block;
-
     margin-left: 20px;
     padding: 3px 0px;
     border-bottom: solid 0.5px #4484BB;
@@ -203,6 +76,7 @@ a:hover{
     float: left;
     text-align: left;
 }
+
 .right_align{
     text-align: right;
 }
@@ -248,7 +122,14 @@ a:hover{
 
 }
 
+.noMarginX{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.transparent{
+    font-size: 15px;
+    padding-bottom: 7px;
 
-
+}
 
 /* -------------------------------- Body part end ---------------------------------------  */
