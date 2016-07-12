@@ -233,7 +233,10 @@ class HomeController extends Controller
 
         $query = Request::get('query');
         //echo $searchItems;
-        $blogs = Article::where('body', 'like', '%'.$query.'%')->orderBy('created_at', 'desc')->paginate(5); 
+        $blogs = Article::where('body', 'like', '%'.$query.'%')
+                    ->orWhere('title', 'like', '%'.$query.'%')
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(5); 
         $msg = "Showing Everything for query \"".$query."\"";
         return view('blog.index',compact('blogs','categories','msg'));
     }
