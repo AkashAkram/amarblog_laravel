@@ -72,7 +72,7 @@
                     @else
                         @if (Auth::user()->isAdmin)
                             <li><a href="{{ url('../admin') }}">Dashboard</a></li>
-                    @endif
+                        @endif
                             <li class=" "><a href="{{ url('../create') }}">Create New</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

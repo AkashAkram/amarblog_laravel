@@ -5,7 +5,7 @@
                         <form action="search" method="get">
                             <div class="row">
                                 <div class="col-md-11 noMarginX">
-                                    <input type="text" class="form-control" name="query">
+                                    <input type="text" class="form-control" name="result">
                                 </div>
                                 <div class="col-md-1 noMarginX">
                                     <span class="input-group-btn">
