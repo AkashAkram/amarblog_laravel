@@ -20,8 +20,9 @@ class HomeController extends Controller
      *
      * @return void
      */
-    function __construct()
+    public function __construct()
     {
+        $this->middleware('auth',['except'=>'index','singlepost']);
     }
 
     public function index()
@@ -38,7 +39,7 @@ class HomeController extends Controller
 
     public function create()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
         
             $categories = Category::all();
             return view('blog.create',compact('categories'));
@@ -51,8 +52,8 @@ class HomeController extends Controller
      */
     public function post()
     {
-        if($this->middleware('auth'))
-        {
+        //$this->middleware('auth');
+        
             if(isset($_POST['postButton']))
             {
                 $image = $_FILES['image']['name'];
@@ -84,9 +85,6 @@ class HomeController extends Controller
             }
             return redirect('/');
 
-        }
-        else
-            return view('errors.503');
 
     }
 
@@ -94,14 +92,11 @@ class HomeController extends Controller
 
     public function singlepost($id)
     {
-        if($this->middleware('auth'))
-        {
+            //$this->middleware('auth');
+        
             $blog=Article::find($id);
             $categories = Category::all();
             return view('blog.singlepost',compact('blog','categories'));
-        }
-        else
-            return view('errors.503');
 
     }
 
@@ -110,7 +105,7 @@ class HomeController extends Controller
 
     public function myblog()
     {
-            $this->middleware('auth');
+            //$this->middleware('auth');
             $msg = "All Articles By ".Auth::user()->name;
             $id = Auth::user()->id;
             $categories= Category::all();
@@ -125,15 +120,13 @@ class HomeController extends Controller
 
     public function editpost($id)
     {
-        if ($this->middleware('auth'))
-        {
+            //$this->middleware('auth');
+        
             $blog = Article::select()->where('id',$id)->first();
 
             $categories = Category::all();
             return view('blog.update',compact('blog','categories'));
-        }
-        else
-            return view('errors.503');
+        
     }
 
 
@@ -141,7 +134,7 @@ class HomeController extends Controller
 
     public function updatepost($id)
     {
-            $this->middleware('auth');
+            //$this->middleware('auth');
             
             if(isset($_POST['remove']))
             {
@@ -191,7 +184,7 @@ class HomeController extends Controller
 
     public function removepost($id)
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     
             Article::destroy($id);
             return redirect('/');
@@ -201,7 +194,7 @@ class HomeController extends Controller
   
     public function bycategory($id)
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     
             $categories = Category::all();
             $cat_name = Category::select('name')->where('id',$id)->get();
@@ -217,7 +210,7 @@ class HomeController extends Controller
 
     public function byauthor($id)
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     
             $categories = Category::all();
             $auth_name = User::select('name')->where('id',$id)->get();

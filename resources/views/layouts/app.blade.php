@@ -65,23 +65,28 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
+                    
                     @if (Auth::guest())
                         <li><a href="{{ url('../login') }}">Login</a></li>
                         <li><a href="{{ url('../register') }}">Register</a></li>
                     @else
-                        <li class=" "><a href="{{ url('../create') }}">Create New</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <img class="user_image" src="/images/user.jpg" alt="" width="30" height="25">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+                        @if (Auth::user()->isAdmin)
+                            <li><a href="{{ url('../admin') }}">Dashboard</a></li>
+                    @endif
+                            <li class=" "><a href="{{ url('../create') }}">Create New</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <img class="user_image" src="/images/user.jpg" alt="" width="30" height="25">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('../myblog') }}"><i class=""></i>My Blogs</a></li>
-                                <li><a href="../myprofile/{!! Auth::User()->id !!}"><i class=""></i>Profile</a></li>
-                                <li><a href="{{ url('../logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('../myblog') }}"><i class=""></i>My Blogs</a></li>
+                                    <li><a href="../myprofile/{!! Auth::User()->id !!}"><i class=""></i>Profile</a></li>
+                                    <li><a href="{{ url('../logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                </ul>
+                            </li>
+
                     @endif
                 </ul>
             </div>
